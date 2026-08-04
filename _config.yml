@@ -11,7 +11,7 @@ repository: sar-info-repoadmin/sar-test-protocol
 collections:
   criteria:
     output: true
-    permalink: /criteria/:path/
+    permalink: /criteria/:slug/
 
 defaults:
   - scope:
