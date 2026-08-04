@@ -10,6 +10,8 @@
   --color-bg: #FAF7F5;             /* Neutral 05 */
   --color-surface: #FFFFFF;
   --color-border: #E5E2DF;         /* Neutral 30 */
+  --color-nav-link: #245791;         /* Slate 60 */
+  --color-nav-link-visited: #253950; /* Slate 100 */
 
   /* aliases used throughout this stylesheet */
   --fg: var(--color-headline);
@@ -26,10 +28,11 @@
   --font-weight-bold: 700;
   --font-weight-black: 900;
 
-  --font-size-h1: 4rem;
-  --font-size-h2: 2.25rem;
-  --font-size-h3: 1.35rem;
-  --font-size-body: 1rem;
+  /* Heading scale, proportional between H1 (36px) and body (16px) */
+  --font-size-h1: 2.25rem;    /* 36px */
+  --font-size-h2: 1.5rem;     /* 24px */
+  --font-size-h3: 1.125rem;   /* 18px */
+  --font-size-body: 1rem;     /* 16px */
   --font-size-label: 1rem;
   --font-size-small: 0.875rem;
 
@@ -51,6 +54,10 @@
     --color-accent: #CF433E;       /* Brick 30 */
     --color-accent-tint: #403332;
     --color-structure: #294566;    /* Slate 90 */
+    /* Slate 60/100 are too low-contrast on a near-black background, so dark
+       mode uses lighter steps from the same Slate ramp instead. */
+    --color-nav-link: #91AECF;         /* Slate 30 */
+    --color-nav-link-visited: #C3D4E6; /* Slate 20 */
   }
 }
 
@@ -73,11 +80,7 @@ h1, h2, h3 {
   color: var(--color-structure);
   margin: 0 0 0.5em;
 }
-/* This site's titles are descriptive sentences, not short hero headlines, so
-   page-level h1s use the H2 (section title) token rather than the much
-   larger H1 token — the H1 token is defined above and available if a future
-   page needs a true hero headline. */
-h1 { font-size: var(--font-size-h2); font-weight: var(--font-weight-black); }
+h1 { font-size: var(--font-size-h1); font-weight: var(--font-weight-black); }
 h2 { font-size: var(--font-size-h2); font-weight: var(--font-weight-bold); }
 h3 { font-size: var(--font-size-h3); font-weight: var(--font-weight-bold); }
 
@@ -162,12 +165,13 @@ h3 { font-size: var(--font-size-h3); font-weight: var(--font-weight-bold); }
 .nav-criteria { list-style: none; margin: 0; padding: 0; }
 .nav-criteria li { margin-bottom: 0.25rem; }
 .nav-criteria a {
-  color: var(--color-structure);
+  color: var(--color-nav-link);
   text-decoration: none;
   font-size: var(--font-size-label);
   font-weight: var(--font-weight-semibold);
   line-height: var(--line-height-label);
 }
+.nav-criteria a:visited { color: var(--color-nav-link-visited); }
 .nav-criteria a:hover { text-decoration: underline; }
 .nav-criteria a[aria-current="page"] {
   color: var(--color-structure);
