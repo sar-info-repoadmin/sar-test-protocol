@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} · {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | strip_newlines | truncate: 160 }}">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="site-title" href="{{ '/' | relative_url }}">{{ site.title }}</a>
+      <a class="repo-link" href="https://github.com/{{ site.repository }}">View on GitHub</a>
+    </div>
+  </header>
+
+  <div class="layout">
+    <nav class="site-nav" aria-label="Criteria by category">
+      {% include nav.html %}
+    </nav>
+
+    <main id="main" class="content">
+      {{ content }}
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>SAR Washing Machine Accessibility Test Protocol — discuss or propose changes on any criterion page.</p>
+    </div>
+  </footer>
+</body>
+</html>

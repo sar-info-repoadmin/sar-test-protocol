@@ -1,0 +1,35 @@
+title: SAR Washing Machine Accessibility Test Protocol
+description: >-
+  A public, versioned test protocol for evaluating the accessibility of
+  washing machines. Each criterion has its own page and discussion thread
+  so the standard can evolve in the open.
+baseurl: "/sar-test-protocol"
+url: "https://sar-info-repoadmin.github.io"
+
+repository: sar-info-repoadmin/sar-test-protocol
+
+collections:
+  criteria:
+    output: true
+    permalink: /criteria/:path/
+
+defaults:
+  - scope:
+      path: ""
+      type: criteria
+    values:
+      layout: criterion
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+markdown: kramdown
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - docs
+  - "*.csv"
+  - "*.docx"

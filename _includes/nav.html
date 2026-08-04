@@ -1,0 +1,13 @@
+<ul class="nav-categories">
+  {% for category in site.data.categories %}
+    {% assign items = site.criteria | where: "category", category | sort: "order" %}
+    <li class="nav-category">
+      <span class="nav-category-label">{{ category }}</span>
+      <ul class="nav-criteria">
+        {% for item in items %}
+          <li><a href="{{ item.url | relative_url }}"{% if page.url == item.url %} aria-current="page"{% endif %}>{{ item.title }}</a></li>
+        {% endfor %}
+      </ul>
+    </li>
+  {% endfor %}
+</ul>

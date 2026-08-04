@@ -1,0 +1,24 @@
+---
+layout: default
+---
+<article class="criterion">
+  <p class="criterion-category"><a href="{{ '/' | relative_url }}#{{ page.category | slugify }}">{{ page.category }}</a></p>
+  <h1>{{ page.title }}</h1>
+
+  <section class="criterion-section">
+    <h2>Expected behavior</h2>
+    <p>{{ page.expected_behavior }}</p>
+  </section>
+
+  <section class="criterion-section">
+    <h2>Pass / fail criteria</h2>
+    <p>{{ page.pass_fail_criteria }}</p>
+  </section>
+
+  <section class="criterion-section">
+    <h2>Reference</h2>
+    <p>{{ page.reference }}</p>
+  </section>
+</article>
+
+{% include giscus.html %}
