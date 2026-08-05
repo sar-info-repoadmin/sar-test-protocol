@@ -2,6 +2,10 @@
 
 A public test protocol for evaluating the accessibility of washing machines. Each criterion has its own page, generated from [`docs/Washing Machine Accessibility Reporting Template.csv`](docs/Washing%20Machine%20Accessibility%20Reporting%20Template.csv), with a discussion thread (via [giscus](https://giscus.app), backed by GitHub Discussions) where anyone can comment or propose a change.
 
+## Viewing and commenting on the criteria
+Follow the link below to access the criteria and comment on them in a threaded discussion:
+https://sar-info-repoadmin.github.io/sar-test-protocol/
+
 ## Updating criteria
 
 Edit the source CSV in `docs/`, then regenerate the `_criteria/` collection and `_data/categories.yml` (requires `pyyaml`: `python3 -m pip install pyyaml`):
